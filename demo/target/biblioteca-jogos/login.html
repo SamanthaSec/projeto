@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Acesso Restrito • Arquivo Paranormal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="center">
+  <div class="auth ficha">
+    <div class="selo">CONFIDENCIAL</div>
+    <svg class="sigilo" viewBox="0 0 100 100" fill="none" stroke="#c1121f" stroke-width="3">
+      <circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="30" stroke-width="1.5"/>
+      <path d="M50 8 L50 92 M8 50 L92 50" stroke-width="1.5"/>
+      <path d="M50 22 L74 64 L26 64 Z"/><circle cx="50" cy="50" r="7" fill="#c1121f"/>
+    </svg>
+    <h1 class="titulo glitch">Arquivo Paranormal</h1>
+    <p class="sub">Acesso restrito a agentes autorizados</p>
+
+    <div class="tabs">
+      <button id="tLogin" class="on">Acessar</button>
+      <button id="tReg">Recrutamento</button>
+    </div>
+
+    <form id="fLogin">
+      <label>E-mail do agente</label><input type="email" id="lEmail" placeholder="agente@ordem.com" required>
+      <label>Senha</label><input type="password" id="lSenha" placeholder="••••••••" required>
+      <button class="btn" type="submit">Entrar no arquivo</button>
+    </form>
+
+    <form id="fReg" style="display:none">
+      <label>Nome de código</label><input id="rNome" placeholder="Seu nome" required>
+      <label>E-mail</label><input type="email" id="rEmail" placeholder="agente@ordem.com" required>
+      <label>Senha (mín. 6 caracteres)</label><input type="password" id="rSenha" minlength="6" required>
+      <button class="btn" type="submit">Iniciar recrutamento</button>
+    </form>
+    <div class="msg" id="msg"></div>
+    <div class="rodape">A REALIDADE É FRÁGIL</div>
+  </div>
+</div>
+<script src="js/api.js"></script>
+<script>
+const msg = (t, ok) => { $('#msg').textContent = t; $('#msg').className = 'msg' + (ok ? ' ok' : ''); };
+function aba(login) {
+  mostrar($('#fLogin'), login, 'block'); mostrar($('#fReg'), !login, 'block');
+  $('#tLogin').classList.toggle('on', login); $('#tReg').classList.toggle('on', !login); msg('');
+}
+$('#tLogin').onclick = () => aba(true);
+$('#tReg').onclick = () => aba(false);
+
+async function enviar(form, fn) {
+  const b = $('button[type=submit]', form); b.disabled = true;
+  try { await fn(); } catch (e) { msg(e.message); }
+  b.disabled = false;
+}
+async function entrar(email, senha) {
+  await api('api/auth/login', 'POST', { email, senha });
+  location.href = 'app.html';
+}
+$('#fLogin').onsubmit = e => { e.preventDefault(); enviar(e.target, () => entrar($('#lEmail').value, $('#lSenha').value)); };
+$('#fReg').onsubmit = e => {
+  e.preventDefault();
+  enviar(e.target, async () => {
+    const email = $('#rEmail').value, senha = $('#rSenha').value;
+    await api('api/auth/register', 'POST', { nome: $('#rNome').value, email, senha });
+    msg('Agente recrutado! Entrando...', true);
+    await entrar(email, senha);
+  });
+};
+</script>
+</body>
+</html>
