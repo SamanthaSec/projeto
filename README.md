@@ -22,15 +22,6 @@ Projeto acadêmico de **Aplicações para Internet (Uniube)**. É uma API RESTfu
 
 A interface web (HTML, CSS e JavaScript puro) conversa com a API por `fetch` e segue o visual de um dossiê de investigação paranormal, em vermelho e preto.
 
-## 📸 Telas
-
-| Login e recrutamento | Painel do acervo |
-|:---:|:---:|
-| ![Login](docs/img/login.png) | ![Painel](docs/img/painel.png) |
-
-| Categorias personalizadas |
-|:---:|
-| ![Categorias](docs/img/categorias.png) |
 
 ## ✨ Funcionalidades
 
