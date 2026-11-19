@@ -23,7 +23,7 @@ Projeto acadêmico de **Aplicações para Internet (Uniube)**. É uma API RESTfu
 A interface web (HTML, CSS e JavaScript puro) conversa com a API por `fetch` e segue o visual de um dossiê de investigação paranormal, em vermelho e preto.
 
 
-## ✨ Funcionalidades
+##  Funcionalidades
 
 - 🔐 **Cadastro e login** com sessão e senha protegida por hash (PBKDF2 + salt)
 - 🎮 **CRUD de jogos** (criar, listar, editar e excluir)
@@ -32,7 +32,7 @@ A interface web (HTML, CSS e JavaScript puro) conversa com a API por `fetch` e s
 - 📊 **Estatísticas** do acervo: total de registros, valor, preço médio e categorias
 - 👤 **Dados isolados**: cada usuário só enxerga o que é dele
 
-## 🧱 Arquitetura
+##  Arquitetura
 
 ```mermaid
 flowchart LR
@@ -51,7 +51,7 @@ flowchart LR
 | **Model** | Entidades | `Jogo`, `Categoria`, `Usuario` |
 | **Filter** | Bloqueia rotas sem login (401) | `AuthFilter` |
 
-## 🗄️ Banco de dados
+##  Banco de dados
 
 ```mermaid
 erDiagram
@@ -96,7 +96,7 @@ demo/
         ├── css/   js/   WEB-INF/web.xml
 ```
 
-## 🚀 Como rodar
+##  Como rodar
 
 **Pré-requisitos:** JDK 17, Maven, Tomcat 9 e MySQL (ou XAMPP).
 
@@ -172,6 +172,6 @@ Todas as respostas são JSON. Erros vêm como `{"erro": "mensagem"}`. As rotas d
 
 <div align="center">
 
-*Projeto acadêmico, Uniube.* 🩸
+*Projeto acadêmico, Uniube.* 
 
 </div>
