@@ -8,7 +8,7 @@ async function api(url, metodo = 'GET', corpo) {
   });
   const t = await r.text();
   let d = null;
-  try { d = t ? JSON.parse(t) : null; } catch (e) {}
+  try { d = t ? JSON.parse(t) : null; } catch (e) { }
   if (!r.ok) { const e = new Error((d && d.erro) || 'Erro ' + r.status); e.status = r.status; throw e; }
   return d;
 }
@@ -21,7 +21,7 @@ function toast(msg, erro) {
   setTimeout(() => el.remove(), 2800);
 }
 
-// mostra/esconde direto pelo estilo do elemento (não depende de regra de CSS)
+
 function mostrar(el, ligado, tipo) { el.style.display = ligado ? (tipo || 'grid') : 'none'; }
 
 const brl = n => n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });

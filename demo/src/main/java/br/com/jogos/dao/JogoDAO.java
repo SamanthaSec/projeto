@@ -12,15 +12,13 @@ import java.util.List;
 import br.com.jogos.config.Conexao;
 import br.com.jogos.model.Jogo;
 
-/** Todas as consultas filtram por usuario_id: cada usuário só enxerga a própria coleção. */
 public class JogoDAO {
     private static final String COLUNAS = "id, titulo, plataforma, genero, preco, categoria_id";
 
-    public List<Jogo> listar(int usuarioId) {
+    public List<Jogo> listar() {
         List<Jogo> lista = new ArrayList<>();
-        String sql = "SELECT " + COLUNAS + " FROM jogos WHERE usuario_id = ? ORDER BY titulo";
+        String sql = "SELECT " + COLUNAS + " FROM jogos ORDER BY titulo";
         try (Connection c = Conexao.getConexao(); PreparedStatement ps = c.prepareStatement(sql)) {
-            ps.setInt(1, usuarioId);
             try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) lista.add(mapear(rs));
             }
@@ -30,7 +28,7 @@ public class JogoDAO {
         return lista;
     }
 
-    public Jogo buscarPorId(int id, int usuarioId) {
+    public Jogo buscarPorId(int id) {
         String sql = "SELECT " + COLUNAS + " FROM jogos WHERE id = ? AND usuario_id = ?";
         try (Connection c = Conexao.getConexao(); PreparedStatement ps = c.prepareStatement(sql)) {
             ps.setInt(1, id);
@@ -78,11 +76,11 @@ public class JogoDAO {
         }
     }
 
-    public boolean excluir(int id, int usuarioId) {
+    public boolean excluir(int id) {
         String sql = "DELETE FROM jogos WHERE id = ? AND usuario_id = ?";
         try (Connection c = Conexao.getConexao(); PreparedStatement ps = c.prepareStatement(sql)) {
             ps.setInt(1, id);
-            ps.setInt(2, usuarioId);
+            ps.setInt(2, id);
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
             throw new RuntimeException("Erro ao excluir jogo", e);

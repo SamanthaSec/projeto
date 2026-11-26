@@ -10,7 +10,6 @@ import br.com.jogos.service.CategoriaService;
 import br.com.jogos.util.Json;
 import br.com.jogos.util.Sessao;
 
-/** /api/categorias e /api/categorias/{id} — categorias personalizadas do usuário logado. */
 public class CategoriaController extends HttpServlet {
     private final CategoriaService service = new CategoriaService();
 
