@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import br.com.jogos.util.Json;
 
-
+/** Bloqueia /api/jogos/* para quem não fez login (responde 401). */
 public class AuthFilter implements Filter {
     @Override public void init(FilterConfig config) {}
     @Override public void destroy() {}

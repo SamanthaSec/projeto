@@ -10,6 +10,7 @@ import br.com.jogos.service.JogoService;
 import br.com.jogos.util.Json;
 import br.com.jogos.util.Sessao;
 
+/** /api/jogos (coleção) e /api/jogos/{id} (item) — sempre da coleção do usuário logado. */
 public class JogoController extends HttpServlet {
     private final JogoService service = new JogoService();
 

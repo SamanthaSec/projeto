@@ -13,11 +13,11 @@ public class JogoService {
     private final CategoriaDAO categorias = new CategoriaDAO();
 
     public List<Jogo> listar(int usuarioId) {
-        return dao.listar();
+        return dao.listar(usuarioId);
     }
 
     public Jogo buscar(int usuarioId, int id) {
-        Jogo j = dao.buscarPorId(id);
+        Jogo j = dao.buscarPorId(id, usuarioId);
         if (j == null) throw new NoSuchElementException("Jogo não encontrado");
         return j;
     }
@@ -38,7 +38,7 @@ public class JogoService {
     }
 
     public void excluir(int usuarioId, int id) {
-        if (!dao.excluir(id)) throw new NoSuchElementException("Jogo não encontrado");
+        if (!dao.excluir(id, usuarioId)) throw new NoSuchElementException("Jogo não encontrado");
     }
 
     private void validar(int usuarioId, Jogo j) {

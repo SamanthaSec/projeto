@@ -11,6 +11,7 @@ import br.com.jogos.model.Usuario;
 import br.com.jogos.service.UsuarioService;
 import br.com.jogos.util.Json;
 
+/** /api/auth/register, /api/auth/login, /api/auth/logout (POST) e /api/auth/me (GET). */
 public class AuthController extends HttpServlet {
     private final UsuarioService service = new UsuarioService();
 

@@ -8,7 +8,7 @@ import javax.crypto.spec.PBEKeySpec;
 import br.com.jogos.dao.UsuarioDAO;
 import br.com.jogos.model.Usuario;
 
-
+/** Cadastro e autenticação. A senha nunca é guardada em texto puro (PBKDF2 + salt). */
 public class UsuarioService {
     private final UsuarioDAO dao = new UsuarioDAO();
 

@@ -4,7 +4,7 @@
 
 ### Acervo de jogos com API REST em Java, MySQL e tema de dossiê paranormal
 
-![Java](https://img.shields.io/badge/Java-17-b3121f?style=for-the-badge&logo=openjdk&logoColor=white)
+![Java](https://img.shields.io/badge/Java-25-b3121f?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Tomcat](https://img.shields.io/badge/Tomcat-9-b3121f?style=for-the-badge&logo=apachetomcat&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-MariaDB-b3121f?style=for-the-badge&logo=mysql&logoColor=white)
 ![Maven](https://img.shields.io/badge/Maven-build-b3121f?style=for-the-badge&logo=apachemaven&logoColor=white)
@@ -98,7 +98,7 @@ demo/
 
 ##  Como rodar
 
-**Pré-requisitos:** JDK 17, Maven, Tomcat 9 e MySQL (ou XAMPP).
+**Pré-requisitos:** JDK 25 (LTS), Maven, Tomcat 9 e MySQL (ou XAMPP).
 
 ```bash
 # 1. Crie o banco
