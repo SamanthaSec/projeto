@@ -4,7 +4,7 @@ public class Categoria {
     private int id;
     private String nome;
     private String cor;
-    private transient int usuarioId; // transient: nunca vai/volta no JSON
+    private transient int usuarioId; 
 
     public Categoria() {}
 
