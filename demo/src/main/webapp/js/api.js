@@ -21,7 +21,7 @@ function toast(msg, erro) {
   setTimeout(() => el.remove(), 2800);
 }
 
-// mostra/esconde direto pelo estilo do elemento (não depende de regra de CSS)
+
 function mostrar(el, ligado, tipo) { el.style.display = ligado ? (tipo || 'grid') : 'none'; }
 
 const brl = n => n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
