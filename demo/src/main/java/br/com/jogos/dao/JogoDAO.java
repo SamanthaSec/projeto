@@ -12,7 +12,7 @@ import java.util.List;
 import br.com.jogos.config.Conexao;
 import br.com.jogos.model.Jogo;
 
-/** Todas as consultas filtram por usuario_id: cada usuário só enxerga a própria coleção. */
+
 public class JogoDAO {
     private static final String COLUNAS = "id, titulo, plataforma, genero, preco, categoria_id";
 
