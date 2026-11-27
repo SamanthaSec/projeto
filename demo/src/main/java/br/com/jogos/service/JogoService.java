@@ -7,7 +7,7 @@ import br.com.jogos.dao.CategoriaDAO;
 import br.com.jogos.dao.JogoDAO;
 import br.com.jogos.model.Jogo;
 
-/** Regras de negócio dos jogos (validação, dono e categoria). */
+
 public class JogoService {
     private final JogoDAO dao = new JogoDAO();
     private final CategoriaDAO categorias = new CategoriaDAO();
