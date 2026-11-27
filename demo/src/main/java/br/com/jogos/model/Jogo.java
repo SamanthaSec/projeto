@@ -6,8 +6,8 @@ public class Jogo {
     private String plataforma;
     private String genero;
     private double preco;
-    private Integer categoriaId;      // null = sem categoria
-    private transient int usuarioId;  // dono do jogo (vem da sessão, nunca do JSON)
+    private Integer categoriaId;      
+    private transient int usuarioId;  
 
     public Jogo() {}
 
