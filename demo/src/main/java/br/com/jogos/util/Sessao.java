@@ -5,7 +5,7 @@ import javax.servlet.http.HttpSession;
 
 import br.com.jogos.model.Usuario;
 
-/** Descobre quem é o usuário logado a partir da sessão. */
+
 public final class Sessao {
     private Sessao() {}
 
