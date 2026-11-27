@@ -4,7 +4,7 @@ public class Usuario {
     private int id;
     private String nome;
     private String email;
-    private String senhaHash; // formato "salt:hash" (Base64)
+    private String senhaHash; 
 
     public Usuario() {}
 
