@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
 import br.com.jogos.dao.CategoriaDAO;
 import br.com.jogos.model.Categoria;
 
-/** Regras das categorias personalizadas de cada usuário. */
+
 public class CategoriaService {
     private final CategoriaDAO dao = new CategoriaDAO();
 
