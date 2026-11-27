@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 
-/** Leitura/escrita de JSON e mapeamento de exceções para status HTTP. */
+
 public final class Json {
     private static final Gson GSON = new Gson();
 
